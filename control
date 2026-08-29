@@ -1,0 +1,9 @@
+Package: xyz.regulad.appsflyerdefeat
+Name: AppsFlyerDefeat
+Version: 0.1.0
+Architecture: iphoneos-arm64e
+Description: Neutralizes AppsFlyer SDK jailbreak detection by forcing the AppsFlyerUtils verdict to NO
+Maintainer: regulad
+Author: regulad
+Section: Tweaks
+Depends: ellekit
