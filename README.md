@@ -1,4 +1,4 @@
-# AppsFlyerDefeat
+# AppsFlyerShim
 
 A tiny iOS tweak that neutralizes the **AppsFlyer SDK's** built-in jailbreak and VPN
 detection by forcing its verdict methods to return `NO`.
@@ -13,7 +13,7 @@ It hooks three class methods on `AppsFlyerUtils`:
 | Method | Meaning |
 |---|---|
 | `+ isJailbrokenWithSkipAdvancedJailbreakValidation:` | jailbreak verdict (basic + "advanced" pass) |
-| `+ isJailbroken` | jailbreak verdict (older SDKs; often dead-stripped) |
+| `+ isJailbroken` | jailbreak verdict |
 | `+ isVPNConnected` | the SDK's own VPN detection (its `getifaddrs` / `nw_path` / proxy machinery) |
 
 All three are forced to `NO`. Because these values are *inputs* to the telemetry AppsFlyer
@@ -35,7 +35,7 @@ logic into a single boolean, so one hook defeats it with no interface-list surge
 Ships with a **`Classes` filter** on `AppsFlyerUtils`
 ([confirmed valid in ElleKit's `injector.c`](https://github.com/tealbathingsuit/ellekit/blob/main/injector/injector.c)):
 the dylib loads into **every process that contains the AppsFlyer SDK, and nothing else** —
-no daemons, no non-AppsFlyer apps. Edit `AppsFlyerDefeat.plist` to a `Bundles` filter if
+no daemons, no non-AppsFlyer apps. Edit `AppsFlyerShim.plist` to a `Bundles` filter if
 you want it scoped to a single app instead.
 
 ## What this does NOT do
@@ -69,7 +69,7 @@ The `.deb` lands in `packages/` as `iphoneos-arm64e`.
 Install through Sileo/Zebra/`apt` (roothide's package manager, which creates the `.jbroot`
 symlinks) — not a bare `dpkg -i`.
 
-With the **debug** build, `oslog | grep AppsFlyerDefeat` reports what bound in each app:
+With the **debug** build, `oslog | grep AppsFlyerShim` reports what bound in each app:
 
 ```
 loaded in <app>; AppsFlyerUtils=AppsFlyerUtils isJailbroken=0 jbAdv=1 vpn=1

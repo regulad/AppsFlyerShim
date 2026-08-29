@@ -5,13 +5,12 @@ ARCHS = arm64
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = AppsFlyerDefeat
-AppsFlyerDefeat_FILES = Tweak.x
-AppsFlyerDefeat_CFLAGS = -fobjc-arc -Wall
+TWEAK_NAME = AppsFlyerShim
+AppsFlyerShim_FILES = Tweak.x
+AppsFlyerShim_CFLAGS = -fobjc-arc -Wall
 
-# Debug logging off unless: make DEBUG_LOG=1
-ifeq ($(DEBUG_LOG),1)
-AppsFlyerDefeat_CFLAGS += -DAFD_DEBUG=1
+ifneq ($(FINALPACKAGE),1)
+AppsFlyerShim_CFLAGS += -DAFD_DEBUG=1
 endif
 
 include $(THEOS_MAKE_PATH)/tweak.mk

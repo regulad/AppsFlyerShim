@@ -1,25 +1,12 @@
 # Managed by the Probot "Settings" app (github.com/repository-settings/app).
 repository:
-  name: AppsFlyerDefeat
+  name: AppsFlyerShim
   description: >-
     iOS tweak that neutralizes the AppsFlyer SDK's jailbreak and VPN detection
     by forcing AppsFlyerUtils's verdict methods to NO. Defeats detection for
     apps that trust AppsFlyer's state.
   homepage: ""
-  topics:
-    - ios
-    - jailbreak
-    - tweak
-    - roothide
-    - dopamine
-    - appsflyer
-    - jailbreak-detection
-    - jailbreak-bypass
-    - vpn-detection
-    - anti-tamper
-    - theos
-    - ellekit
-    - arm64e
+  topics: "ios, jailbreak, tweak, roothide, dopamine, appsflyer, jailbreak-detection, jailbreak-bypass, vpn-detection, anti-tamper, theos, ellekit, arm64e"
   has_issues: true
   has_projects: false
   has_wiki: false
