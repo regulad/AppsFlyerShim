@@ -1,4 +1,8 @@
-# Managed by the Probot "Settings" app (github.com/repository-settings/app).
+# Repository configuration, managed by the Settings app
+# (https://github.com/repository-settings/app). The shared defaults come from
+# regulad/.github; this file sets only what is this repository's own.
+_extends: .github
+
 repository:
   name: AppsFlyerShim
   description: >-
@@ -6,10 +10,7 @@ repository:
     by forcing AppsFlyerUtils's verdict methods to NO. Defeats detection for
     apps that trust AppsFlyer's state.
   homepage: ""
+  private: false
+  # Topics: comma-and-space separated string, NOT a YAML list.
   topics: "ios, jailbreak, tweak, roothide, dopamine, appsflyer, jailbreak-detection, jailbreak-bypass, vpn-detection, anti-tamper, theos, ellekit, arm64e"
-  has_issues: true
-  has_projects: false
-  has_wiki: false
-  has_downloads: true
   default_branch: master
-  delete_branch_on_merge: true
