@@ -6,9 +6,8 @@ _extends: .github
 repository:
   name: AppsFlyerShim
   description: >-
-    iOS tweak that neutralizes the AppsFlyer SDK's jailbreak and VPN detection
-    by forcing AppsFlyerUtils's verdict methods to NO. Defeats detection for
-    apps that trust AppsFlyer's state.
+    iOS tweak that neutralizes the AppsFlyer SDK's jailbreak and VPN
+    detection
   homepage: ""
   private: false
   # Topics: comma-and-space separated string, NOT a YAML list.
